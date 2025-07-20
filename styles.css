@@ -1,10 +1,10 @@
 :root {
-    --primary-background-color: #010A13;
-    --secondary-background-color: #091428;
-    --tertiary-background-color: #ffffff;
+    --primary-background-color: #010A13; /* heading and footer background color */
+    --secondary-background-color: #091428; /* section background colors */
+    --tertiary-background-color: #ffffff; /* section background colors, alternates between this and secondary bg color */
     --heading-font-color: #D8AB7B;
     --description-font-color: #CDBE91;
-    --contrast-font-color: #0A1428;
+    --contrast-font-color: #0A1428; /*font color to be used when the background color is white */
     --gold-accent-font-color: #F1DAC3; /*probs have to be secondary */
 }
 
@@ -23,8 +23,8 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-    color: white;
+    background: var(--primary-background-color);
+    color: var(--description-font-color);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -52,7 +52,7 @@ body {
 .logo-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(45deg, #ffd700, #ffb300);
+    background: linear-gradient(45deg, var(--heading-font-color), #ffb300);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -69,20 +69,20 @@ body {
 }
 
 .nav-menu a {
-    color: #ffd700;
+    color: var(--heading-font-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: white;
+    color: var(--description-font-color);
 }
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-    color: white;
+    color: var(--description-font-color);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -117,10 +117,7 @@ body {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #ffd700, #ffb300);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--heading-font-color);
 }
 
 .hero-content p {
@@ -147,7 +144,7 @@ body {
 .stat-number {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #ffd700;
+    color: var(--heading-font-color);
 }
 
 .stat-label {
@@ -165,7 +162,7 @@ body {
 }
 
 .contact-form h3 {
-    color: #ffd700;
+    color: var(--heading-font-color);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
@@ -177,7 +174,7 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #ffd700;
+    color: var(--heading-font-color);
 }
 
 .form-group input,
@@ -187,7 +184,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
-    color: white;
+    color: var(--description-font-color);
     font-size: 1rem;
 }
 
@@ -197,7 +194,7 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(45deg, #ffd700, #ffb300);
+    background: linear-gradient(45deg, var(--heading-font-color), #ffb300);
     color: #1a237e;
     padding: 0.8rem 2rem;
     border: none;
@@ -240,7 +237,7 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(45deg, #ffd700, #ffb300);
+    background: linear-gradient(45deg, var(--heading-font-color), #ffb300);
 }
 
 .services-grid {
@@ -250,13 +247,13 @@ body {
 }
 
 .service-card {
-    background: white;
+    background: var(--description-font-color);
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid #ffd700;
+    border-top: 4px solid var(--heading-font-color);
 }
 
 .service-card:hover {
@@ -274,7 +271,7 @@ body {
     justify-content: center;
     margin: 0 auto 1rem;
     font-size: 1.5rem;
-    color: #ffd700;
+    color: var(--heading-font-color);
 }
 
 .service-card h3 {
@@ -292,7 +289,7 @@ body {
 .about {
     padding: 6rem 0;
     background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-    color: white;
+    color: var(--description-font-color);
 }
 
 .about-content {
@@ -319,7 +316,7 @@ body {
 /* Footer */
 .footer {
     background: #1a237e;
-    color: white;
+    color: var(--description-font-color);
     text-align: center;
     padding: 2rem 0;
 }
