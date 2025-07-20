@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Nathaniel Fernandez - Full-Stack Web Developer & Designer</title>
 </head>
 <body>
@@ -96,12 +96,12 @@
         <div class="container">
             <div class="about-content">
                 <div>
-                    <h2 class="section-title" style="color: #ffd700; text-align: left;">About Me</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">I'm a full-stack web developer and designer who believes in creating digital solutions that truly serve their purpose. With experience in both corporate environments and independent projects, I understand how to build web applications that are both technically sound and user-friendly.</p>
-                    <p style="font-size: 1.1rem;">My approach combines technical expertise with thoughtful design, ensuring every project not only works flawlessly but also provides an exceptional user experience for your members and stakeholders.</p>
+                    <h2 class="section-title">About Me</h2>
+                    <p>I'm a full-stack web developer and designer who believes in creating digital solutions that truly serve their purpose. With experience in both corporate environments and independent projects, I understand how to build web applications that are both technically sound and user-friendly.</p>
+                    <p>My approach combines technical expertise with thoughtful design, ensuring every project not only works flawlessly but also provides an exceptional user experience for your members and stakeholders.</p>
                 </div>
                 <div>
-                    <h3 style="color: #ffd700; margin-bottom: 1.5rem;">Technical Skills</h3>
+                    <h3 class="skills-title">Technical Skills</h3>
                     <div class="skills-grid">
                         <div class="skill-item">PHP & Laravel</div>
                         <div class="skill-item">JavaScript</div>
@@ -150,10 +150,10 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 35, 126, 0.95)';
+                header.style.background = 'rgba(1, 10, 19, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)';
+                header.style.background = 'var(--primary-background-color)';
                 header.style.backdropFilter = 'none';
             }
         });
