@@ -20,7 +20,9 @@
             --light-bg-color: #e6e6e6;
 
             --pad: max(20px, 4vmin);
-            --fs-text: 12px
+            --fs-text: 12px;
+            --line-height: calc(var(--fs-text) * 1.2);
+            --vertical-padding: calc((var(--pad) - var(--line-height)) / 2);
         }
 
         /* CSS Reset */
@@ -39,6 +41,7 @@
 
         body {
             padding: var(--pad);
+            overflow: hidden;
         }
 
         .page-wrapper {
@@ -46,6 +49,19 @@
             width: 100%;
             z-index: 1;
             border: 1px solid var(--dark-font-color);
+            position: relative;
+        }
+
+        .display-button-wrapper {
+            position: absolute;
+            bottom: var(--pad);
+            left: var(--vertical-padding);
+            z-index: 100;
+        }
+
+        .rotated-button {
+        transform: rotate(270deg);
+        transform-origin: top left;
         }
     </style>
 
@@ -53,6 +69,13 @@
 
 <body>
     <div class="page-wrapper">
-
+    </div>
+    <div class="display-button-wrapper">
+        <div class="rotated-button">
+            <input type="checkbox" name="dark" id="dark">
+            <label for="dark">Dark</label>
+            <input type="checkbox" name="light" id="light">
+            <label for="light">Light</label>
+        </div>
     </div>
 </body>
