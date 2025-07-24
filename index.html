@@ -138,7 +138,7 @@
         }
 
         section {
-            width: 60%;
+            width: 70%;
         }
 
         @media (min-width: 768px) {
@@ -186,8 +186,59 @@
 
         .project-info {
             font-size: var(--fs-xs);
-            line-height: 0.5;
+            line-height: var(--lh-xs);
+            margin-top: -10px;
+        }
 
+        .link-with-icon {
+            display: inline-flex;
+            align-items: baseline;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .job-title {
+            display: inline;
+            white-space: normal;
+        }
+
+        .hover-icon {
+            display: inline-block;
+            height: 1rem; 
+            width: 1rem; 
+            flex-shrink: 0;
+
+            transition: transform 150ms ease-out;
+
+            margin-left: 0.25rem;
+            transform: translateY(1px);
+        }
+
+        .link-with-icon:hover .hover-icon,
+        .link-with-icon:focus-visible .hover-icon {
+            transform: translateY(-4px) translateX(4px);
+        }
+
+        @media (prefers-reduced-motion) {
+            .hover-icon {
+                transition: none;
+            }
+        }
+        
+        .experience-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            margin-bottom: 1rem;
+            padding: 1.25rem;
+        }
+
+        .experience-header h2 {
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dark-font-color); 
         }
 
     </style>
@@ -231,6 +282,90 @@
 
                     When I'm not at the computer, I'm usually woodworking, modelling, gardening, or going out with my dogs.
                 </p>
+            </section>
+
+            <section id="experiences" aria-label="Experiences">
+                <div class="experience-header">
+                    <h2>Experience</h2>
+                </div>
+                <ul>
+                    <li class="experience">
+                        <p class="duration">Nov 2022 - Jan 2025</p>
+                        
+                        <a href="https://richmindale.com/" target="_blank" rel="noopener noreferrer" class="link-with-icon">
+                            <span class="job-title">
+                                Software Engineer · Richmindale US
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="hover-icon" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <p class="job-description">Assigned to support the company’s U.S. branch with continued responsibilities under the same contract. Led development of an online student enrollment system based on required intake data, with a fully custom database design. Integrated PayPal for seamless tuition and registration payments.Maintained system compatibility while supporting cross-border deployment and updates.</p>
+
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">PayPal API</li>
+                            <li class="pill">PHP</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">JavaScript</li>
+                            <li class="pill">CSS</li>
+                            <li class="pill">cPanel</li>
+                        </ul>
+                    </li>
+
+                    <li class="experience">
+                        <p class="duration">Nov 2021 - Nov 2022</p>
+                        
+                        <a href="https://richmindale.com/" target="_blank" rel="noopener noreferrer" class="link-with-icon">
+                            <span class="job-title">
+                                Software Engineer · Richmindale UAE
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="hover-icon" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <p class="job-description">Developed internal systems to support school registrars, administrators, and accountants. Built an online grading system by analyzing paper-based academic records and translating them into a normalized MySQL database. Created a student quiz system and added secure access to downloadable academic credentials. Collaborated with departments to digitize workflows using PHP and ASP.NET-based solutions.</p>
+
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">PHP</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">ASP.NET</li>
+                            <li class="pill">JavaScript</li>
+                            <li class="pill">CSS</li>
+                            <li class="pill">CSS</li>
+                            <li class="pill">cPanel</li>
+                        </ul>
+                    </li>
+
+                    <li class="experience">
+                        <p class="duration">May 2024 - Present</p>
+
+                        <a href="https://pawssionproject.org.ph/" target="_blank" rel="noopener noreferrer" class="link-with-icon">
+                            <span class="job-title">
+                                Donations Integration & Website Optimization Volunteer · Pawssion Project
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="hover-icon" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </a>
+
+
+                        <p class="job-description">Worked on a WordPress-based site to enhance donation functionality and performance.Integrated monthly recurring donations via PayPal.Integrated PayMongo, and other gateways. Optimized images and performed regular maintenance to improve site speed and reliability.</p>
+
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">PayPal API</li>
+                            <li class="pill">Wordpress</li>
+                            <li class="pill">PHP</li>
+                            <li class="pill">PayMongo API</li>
+                            <li class="pill">cPanel</li>
+                        </ul>
+                    </li>
+                </ul>
             </section>
 
             <section id="projects" aria-label="Projects">
@@ -286,6 +421,8 @@
                     </ul>
                 </div>
             </section>
+
+
         </main>
     </div>
     <div class="display-button-wrapper">
