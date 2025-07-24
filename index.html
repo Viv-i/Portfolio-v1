@@ -137,8 +137,20 @@
             display: none;               /* Chrome, Safari */
         }
 
-        main > section {
-            width: 70%;
+        section {
+            width: 60%;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                width: 45%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                width: 30%;
+            }
         }
 
         .project {
@@ -224,7 +236,7 @@
             <section id="projects" aria-label="Projects">
                 <div class="project">
                     <h2>Palawander</h2>
-                    <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. The site allows users to view vehicle details, pricing, and availability without needing to create an account. Bookings are managed via a unique reference number, and payments are securely processed through PayPal.</p>
+                    <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. </p>
 
                     <p class="project-info">
                         June 2025 / Personal Project / Design & Dev
@@ -287,10 +299,15 @@
 
     <script>
         const about = document.querySelector('#about');
+        const header = document.querySelector('header');
         const viewportHeight = window.innerHeight;
         const aboutHeight = about.offsetHeight;
+        const headerHeight = header.offsetHeight;
+        const wrapper = document.querySelector('.page-wrapper');
+        const styles = getComputedStyle(wrapper);
+        const padTop = parseFloat(styles.paddingTop);
 
-        about.style.marginTop = `${viewportHeight - aboutHeight * 2}px`;
+        about.style.marginTop = `${viewportHeight - (padTop * 4) - headerHeight - aboutHeight}px`;
 
     </script>
 </body>
