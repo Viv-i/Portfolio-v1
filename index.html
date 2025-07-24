@@ -23,6 +23,27 @@
             --fs-text: 12px;
             --line-height: calc(var(--fs-text) * 1.2);
             --vertical-padding: calc((var(--pad) - var(--line-height)) / 2);
+
+            --fs-xs: 0.75rem;
+            --lh-xs: 1rem;
+
+            --fs-sm: 0.875rem;
+            --lh-sm: 1.25rem;
+
+            --fs-base: 1rem;
+            --lh-base: 1.5rem;
+
+            --fs-lg: 1.125rem;
+            --lh-lg: 1.75rem;
+
+            --fs-xl: 1.25rem;
+            --lh-xl: 1.75rem;
+
+            --fs-2xl: 1.5rem;
+            --lh-2xl: 2rem;
+
+            --fs-3xl: 1.875rem;
+            --lh-3xl: 2.25rem; 
         }
 
         /* CSS Reset */
@@ -58,7 +79,7 @@
 
         body {
             padding: var(--pad);
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .page-wrapper {
@@ -67,6 +88,10 @@
             z-index: 1;
             border: 1px solid rgba(255, 255, 255, 0.5);
             position: relative;
+            padding: var(--pad);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .display-button-wrapper {
@@ -84,15 +109,6 @@
         svg { 
             height: var(--fs-text);
         }
-        
-        main {
-            height: 100%;
-            width: 100%;
-            padding: var(--pad);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
 
         header {
             display: flex;
@@ -100,58 +116,84 @@
             gap: var(--pad);
         }
 
-        #about {
-            width: 70%;
-            align-self: end;
-        }
-
-        #about p {
-              white-space: pre-line;
-              text-align: right;
-        }
-
-        /* TODO: The code below is a duplicate of #about. Simplify */
-
-        #projects {
-            width: 70%;
-            align-self: end;
+        main {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
             text-align: right;
+            white-space: pre-line;
         }
+
+        main > section {
+            width: 70%;
+        }
+
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.375rem;
+        }
+        
+        .pill {
+            font-size: var(--fs-xs);
+            line-height: var(--lh-xs);            
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--dark-tag-color);
+        }
+
+        ul > li > h2 {
+            font-size: var(--fs-2xl);
+            line-height: var(--lh-2xl);
+        }
+
+        .project-description {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-sm);
+        }
+
+        .project-info {
+            font-size: var(--fs-xs);
+            line-height: var(--lh-xs);
+        }
+
     </style>
 
 </head>
 
 <body>
     <div class="page-wrapper">
+        <header>
+            <hgroup>
+                <h1>Nathaniel Ferandez</h1>
+                <p>Software Engineer / Web Developer</p>
+            </hgroup>
+
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Project</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                </ul>
+            </nav>
+
+            <!-- <div>
+                <a href="https://github.com/Viv-i" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/nathaniel-ferandez/" target="_blank" rel="noopener noreferrer">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
+                        <path style="fill:000000;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path> </g>
+                    </svg>
+                </a>
+            </div> -->
+        </header>
+
         <main>
-            <header>
-                <hgroup>
-                    <h1>Nathaniel Ferandez</h1>
-                    <p>Software Engineer / Web Developer</p>
-                </hgroup>
-
-                <nav>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Project</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                    </ul>
-                </nav>
-
-                <!-- <div>
-                    <a href="https://github.com/Viv-i" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nathaniel-ferandez/" target="_blank" rel="noopener noreferrer">
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
-                            <path style="fill:000000;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path> </g>
-                        </svg>
-                    </a>
-                </div> -->
-            </header>
-
             <section id="about">
                 <p>
                     Back in 2017, frustrated by the high cost of development in mechanical engineering, I decided to try my hand at game development using Unreal engine and Unity. Fast-forward to today, I've shifted my niche into building web based solutions.
@@ -164,55 +206,54 @@
                 <ul>
                     <li>
                         <h2>Palawander</h2>
-                        <p>An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. The site allows users to view vehicle details, pricing, and availability without needing to create an account. Bookings are managed via a unique reference number, and payments are securely processed through PayPal.</p>
+                        <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. The site allows users to view vehicle details, pricing, and availability without needing to create an account. Bookings are managed via a unique reference number, and payments are securely processed through PayPal.</p>
 
                         <p class="project-info">
                             June 2025 / Personal Project / Design & Dev
                         </p>
 
-                        <ul aria-label="Technologies used">
-                            <li>Laravel</li>
-                            <li>MySQL</li>
-                            <li>PayPal API</li>
-                            <li>JavaScript</li>
-                            <li>Tailwind CSS</li>
-                            <li>Blade</li>
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">PayPal API</li>
+                            <li class="pill">Laravel</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">Blade</li>
+                            <li class="pill">JavaScript</li>
+                            <li class="pill">Tailwind CSS</li>
                         </ul>
                     </li>
 
                     <li>
                         <h2>Save Point</h2>
-                        <p>A tailored POS system developed for Sofie's Cookie Cafe.</p>
+                        <p class="project-description">A tailored POS system developed for Sofie's Cookie Cafe.</p>
+                        
                         <p class="project-info">
                             May 2025 / Commission / Design & Dev
                         </p>
 
-                        <ul aria-label="Technologies used">
-                            <li>Laravel</li>
-                            <li>Vue.js</li>
-                            <li>MySQL</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">Laravel</li>
+                            <li class="pill">Vue.js</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">CSS</li>
+                            <li class="pill">JavaScript</li>
                         </ul>
                     </li>
 
                     <li>
-                            <h2>Gerie Hazel</h2>
-                            <p>A health-focused e-commerce website that sells natural and organic products with categories like supplements, personal care, and wellness products.</p>
-                            <p class="project-info">
-                                May 2024 / Commission / Design & Dev
-                            </p>
-                            <ul aria-label="Technologies used">
-                                <li>Laravel</li>
-                                <li>MySQL</li>
-                                <li>Vue.js</li>
-                                <li>Tailwind CSS</li>
-                                <li>PayPal API</li>
-                            </ul>
-                    </li>
+                        <h2>Gerie Hazel</h2>
+                        <p class="project-description">A health-focused e-commerce website that sells natural and organic products with categories like supplements, personal care, and wellness products.</p>
 
+                        <p class="project-info">
+                            May 2024 / Commission / Design & Dev
+                        </p>
 
-                        
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">Laravel</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">Vue.js</li>
+                            <li class="pill">Tailwind CSS</li>
+                            <li class="pill">PayPal API</li>
+                        </ul>
                     </li>
                 </ul>
             </section>
