@@ -284,4 +284,13 @@
             <label for="light">Light</label>
         </div>
     </div>
+
+    <script>
+        const about = document.querySelector('#about');
+        const viewportHeight = window.innerHeight;
+        const aboutHeight = about.offsetHeight;
+
+        about.style.marginTop = `${viewportHeight - aboutHeight * 2}px`;
+
+    </script>
 </body>
