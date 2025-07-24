@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
     <title>Nathaniel Ferandez</title>
     <style>
         :root {
@@ -41,6 +45,9 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "DM Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
         }
 
 
@@ -70,6 +77,13 @@
         transform-origin: top left;
         }
 
+        /* Copyright */
+        #copyright {
+            position: absolute;
+            bottom: var(--vertical-padding);
+            font-size: var(--fs-xs);
+            color: rgba(255, 255, 255, 0.7);
+        }
         /* Main */
 
         html, body {
@@ -103,6 +117,15 @@
             gap: var(--pad);
         }
 
+        hgroup > h1 {
+            font-weight: 200;
+        }
+
+        hgroup > p {
+            font-weight: 400;
+            font-size: var(--fs-sm);
+        }
+
         main {
             flex: 1;
             overflow-y: auto;
@@ -118,26 +141,42 @@
             display: none;               /* Chrome, Safari */
         }
 
-        /* Section */
-        #about {
-            width: 70%;
+        section {
+        width: 100%;
         }
 
-        section {
-            width: 100%;
+        #about {
+            width: 70%;
+            text-align: justify;
+            text-justify: distribute;
+            hyphens: auto;
+            margin-bottom: 4rem;
+            align-self: end;
+            font-size: var(--fs-sm);
+            line-height: var(--lh-sm);
         }
 
         @media (min-width: 768px) {
-            section {
-                width: 45%;
-            }
+        section {
+            width: 60%;
+        }
         }
 
         @media (min-width: 1024px) {
             section {
-                width: 30%;
+                align-self: end;
+                width: 40%;
+            }
+
+            #about {
+                width: 21%;
+            }
+
+            footer {
+                align-self: center;
             }
         }
+
 
         .section-header {
             position: sticky;
@@ -155,13 +194,6 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--dark-font-color);
-        }
-
-        /* About */
-        #about {
-            align-self: end;
-            text-align: right;
-            margin-bottom: 4rem;
         }
 
         /* Experience */
@@ -312,9 +344,9 @@
         <main>
             <section id="about">
                 <p>
-                Back in 2017, frustrated by the high cost of development in mechanical engineering, I decided to try my hand at game development using Unreal engine and Unity.<br><br>
-                Fast-forward to today, I've shifted my niche into building web based solutions.<br><br>
-                When I'm not at the computer, I'm usually woodworking, modelling, gardening, or going out with my dogs.
+                In 2017, while studying mechanical engineering, I was fascinated by video games and the logic behind them. Inspired, I dove into game development with Unreal and Unity.<br><br>
+                That spark grew into a passion for solving problems through code — today, I've shifted my focus to building clean, web-based solutions.<br><br>
+                When I'm not at the computer, I'm usually woodworking, building Gunpla models, gardening, or going out with my dogs.
                 </p>
             </section>
 
@@ -486,14 +518,16 @@
             </footer>
         </main>
     </div>
-    <div class="display-button-wrapper">
+    <!-- <div class="display-button-wrapper">
         <div class="rotated-button">
             <input type="checkbox" name="dark" id="dark">
             <label for="dark">Dark</label>
             <input type="checkbox" name="light" id="light">
             <label for="light">Light</label>
         </div>
-    </div>
+    </div> -->
+
+    <div id="copyright">© Nathaniel Ferandez</div>
 
     <script>
         const about = document.querySelector('#about');
