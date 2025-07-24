@@ -82,19 +82,19 @@
 
         body {
             padding: var(--pad);
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         .page-wrapper {
             height: 100%;
             width: 100%;
-            z-index: 1;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            position: relative;
             padding: var(--pad);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         .display-button-wrapper {
@@ -120,6 +120,8 @@
         }
 
         main {
+            flex: 1;
+            overflow-y: auto;
             height: 100%;
             width: 100%;
             display: flex;
@@ -127,6 +129,12 @@
             align-items: end;
             text-align: right;
             white-space: pre-line;
+            scrollbar-width: none;       /* Firefox */
+            -ms-overflow-style: none;    /* IE/Edge */
+        }
+
+        main::-webkit-scrollbar {
+            display: none;               /* Chrome, Safari */
         }
 
         main > section {
