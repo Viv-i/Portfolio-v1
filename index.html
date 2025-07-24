@@ -47,11 +47,14 @@
         }
 
         /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *,
+        *::before,
+        *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         }
+
 
         a {
             text-decoration: none;
@@ -130,10 +133,17 @@
             width: 70%;
         }
 
+        .project {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
         .tech-used {
             display: flex;
             flex-wrap: wrap;
             gap: 0.375rem;
+            justify-content: end;
         }
         
         .pill {
@@ -156,7 +166,8 @@
 
         .project-info {
             font-size: var(--fs-xs);
-            line-height: var(--lh-xs);
+            line-height: 0.5;
+
         }
 
     </style>
@@ -203,59 +214,57 @@
             </section>
 
             <section id="projects" aria-label="Projects">
-                <ul>
-                    <li>
-                        <h2>Palawander</h2>
-                        <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. The site allows users to view vehicle details, pricing, and availability without needing to create an account. Bookings are managed via a unique reference number, and payments are securely processed through PayPal.</p>
+                <div class="project">
+                    <h2>Palawander</h2>
+                    <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. The site allows users to view vehicle details, pricing, and availability without needing to create an account. Bookings are managed via a unique reference number, and payments are securely processed through PayPal.</p>
 
-                        <p class="project-info">
-                            June 2025 / Personal Project / Design & Dev
-                        </p>
+                    <p class="project-info">
+                        June 2025 / Personal Project / Design & Dev
+                    </p>
 
-                        <ul class="tech-used" aria-label="Technologies used">
-                            <li class="pill">PayPal API</li>
-                            <li class="pill">Laravel</li>
-                            <li class="pill">MySQL</li>
-                            <li class="pill">Blade</li>
-                            <li class="pill">JavaScript</li>
-                            <li class="pill">Tailwind CSS</li>
-                        </ul>
-                    </li>
+                    <ul class="tech-used" aria-label="Technologies used">
+                        <li class="pill">PayPal API</li>
+                        <li class="pill">Laravel</li>
+                        <li class="pill">MySQL</li>
+                        <li class="pill">Blade</li>
+                        <li class="pill">JavaScript</li>
+                        <li class="pill">Tailwind CSS</li>
+                    </ul>
+                </div>
 
-                    <li>
-                        <h2>Save Point</h2>
-                        <p class="project-description">A tailored POS system developed for Sofie's Cookie Cafe.</p>
-                        
-                        <p class="project-info">
-                            May 2025 / Commission / Design & Dev
-                        </p>
+                <div class="project">
+                    <h2>Save Point</h2>
+                    <p class="project-description">A tailored POS and inventory system developed for Sofie's Cookie Cafe.</p>
+                    
+                    <p class="project-info">
+                        May 2025 / Commission / Design & Dev
+                    </p>
 
-                        <ul class="tech-used" aria-label="Technologies used">
-                            <li class="pill">Laravel</li>
-                            <li class="pill">Vue.js</li>
-                            <li class="pill">MySQL</li>
-                            <li class="pill">CSS</li>
-                            <li class="pill">JavaScript</li>
-                        </ul>
-                    </li>
+                    <ul class="tech-used" aria-label="Technologies used">
+                        <li class="pill">Laravel</li>
+                        <li class="pill">Vue.js</li>
+                        <li class="pill">MySQL</li>
+                        <li class="pill">CSS</li>
+                        <li class="pill">JavaScript</li>
+                    </ul>
+                </div>
 
-                    <li>
-                        <h2>Gerie Hazel</h2>
-                        <p class="project-description">A health-focused e-commerce website that sells natural and organic products with categories like supplements, personal care, and wellness products.</p>
+                <div class="project">
+                    <h2>Gerie Hazel</h2>
+                    <p class="project-description">A health-focused e-commerce website that sells natural and organic products with categories like supplements, personal care, and wellness products.</p>
 
-                        <p class="project-info">
-                            May 2024 / Commission / Design & Dev
-                        </p>
+                    <p class="project-info">
+                        May 2024 / Commission / Design & Dev
+                    </p>
 
-                        <ul class="tech-used" aria-label="Technologies used">
-                            <li class="pill">Laravel</li>
-                            <li class="pill">MySQL</li>
-                            <li class="pill">Vue.js</li>
-                            <li class="pill">Tailwind CSS</li>
-                            <li class="pill">PayPal API</li>
-                        </ul>
-                    </li>
-                </ul>
+                    <ul class="tech-used" aria-label="Technologies used">
+                        <li class="pill">Laravel</li>
+                        <li class="pill">MySQL</li>
+                        <li class="pill">Vue.js</li>
+                        <li class="pill">Tailwind CSS</li>
+                        <li class="pill">PayPal API</li>
+                    </ul>
+                </div>
             </section>
         </main>
     </div>
