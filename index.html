@@ -185,7 +185,8 @@
             color: inherit;
         }
 
-        .job-title {
+        .job-title,
+        .project-title {
             display: inline;
             white-space: normal;
             line-height: var(--lh-base);
@@ -193,10 +194,13 @@
             font-weight: 500;         
         }
 
-        .job-description {
+        .job-description,
+        .project-description {
             margin-top: 0.5rem;
             line-height: var(--lh-sm);
             font-size: var(--fs-sm);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.77);
         }
 
         .hover-icon {
@@ -226,18 +230,16 @@
         .project {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .project-description {
-            font-size: var(--fs-sm);
-            line-height: var(--lh-sm);
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 0.25rem;
         }
 
         .project-info {
             font-size: var(--fs-xs);
             line-height: var(--lh-xs);
-            margin-top: -10px;
+            margin-top: 0.5rem;
+            font-weight: 600;
         }
 
         .tech-used {
@@ -259,6 +261,25 @@
             font-size: var(--fs-2xl);
             line-height: var(--lh-2xl);
         }
+
+        .custom-link {
+            font-weight: 500; /* font-medium */
+            color: var(--dark-tag-color); /* text-slate-400 */
+            text-decoration: none;
+        }
+
+        .custom-link:hover,
+        .custom-link:focus-visible {
+            color: var(--dark-tag-color);
+            /* color: #5eead4; text-teal-300 */
+        }
+
+        footer {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-sm);
+            color: rgba(255, 255, 255, 0.77);
+        }
+
     </style>
 
 </head>
@@ -373,65 +394,79 @@
             </section>
 
             <section id="projects" aria-label="Projects">
-
                 <div class="section-header">
                     <h2>Projects</h2>
                 </div>
 
-                <div class="project">
-                    <h2>Palawander</h2>
-                    <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. </p>
+                <ul>
+                    <li class="project">
+                        <h2 class="project-title">Palawander</h2>
+                        <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. </p>
 
-                    <p class="project-info">
-                        June 2025 / Personal Project / Design & Dev
-                    </p>
+                        <p class="project-info">
+                            June 2025 / Personal Project / Design & Dev
+                        </p>
 
-                    <ul class="tech-used" aria-label="Technologies used">
-                        <li class="pill">PayPal API</li>
-                        <li class="pill">Laravel</li>
-                        <li class="pill">MySQL</li>
-                        <li class="pill">Blade</li>
-                        <li class="pill">JavaScript</li>
-                        <li class="pill">Tailwind CSS</li>
-                    </ul>
-                </div>
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">PayPal API</li>
+                            <li class="pill">Laravel</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">Blade</li>
+                            <li class="pill">JavaScript</li>
+                            <li class="pill">Tailwind CSS</li>
+                        </ul>
+                    </li>
 
-                <div class="project">
-                    <h2>Save Point</h2>
-                    <p class="project-description">A tailored POS and inventory system developed for Sofie's Cookie Cafe.</p>
+                    <li class="project">
+                        <h2 class="project-title">Save Point</h2>
+                        <p class="project-description">A tailored POS and inventory system developed for Sofie's Cookie Cafe.</p>
+                        
+                        <p class="project-info">
+                            May 2025 / Commission / Design & Dev
+                        </p>
+
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">Laravel</li>
+                            <li class="pill">Vue.js</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">CSS</li>
+                            <li class="pill">JavaScript</li>
+                        </ul>
+                    </li>
                     
-                    <p class="project-info">
-                        May 2025 / Commission / Design & Dev
-                    </p>
+                    <li class="project">
+                        <h2 class="project-title">Gerie Hazel</h2>
+                        <p class="project-description">A health-focused e-commerce website that sells natural and organic products with categories like supplements, personal care, and wellness products.</p>
+                        <p class="project-info">
+                            May 2024 / Commission / Design & Dev
+                        </p>
 
-                    <ul class="tech-used" aria-label="Technologies used">
-                        <li class="pill">Laravel</li>
-                        <li class="pill">Vue.js</li>
-                        <li class="pill">MySQL</li>
-                        <li class="pill">CSS</li>
-                        <li class="pill">JavaScript</li>
-                    </ul>
-                </div>
+                        <ul class="tech-used" aria-label="Technologies used">
+                            <li class="pill">Laravel</li>
+                            <li class="pill">MySQL</li>
+                            <li class="pill">Vue.js</li>
+                            <li class="pill">Tailwind CSS</li>
+                            <li class="pill">PayPal API</li>
+                        </ul>
+                    </li>
 
-                <div class="project">
-                    <h2>Gerie Hazel</h2>
-                    <p class="project-description">A health-focused e-commerce website that sells natural and organic products with categories like supplements, personal care, and wellness products.</p>
-
-                    <p class="project-info">
-                        May 2024 / Commission / Design & Dev
-                    </p>
-
-                    <ul class="tech-used" aria-label="Technologies used">
-                        <li class="pill">Laravel</li>
-                        <li class="pill">MySQL</li>
-                        <li class="pill">Vue.js</li>
-                        <li class="pill">Tailwind CSS</li>
-                        <li class="pill">PayPal API</li>
-                    </ul>
-                </div>
+                </ul>
             </section>
 
-
+            <footer>
+                <p>Loosely designed in
+                    <!--  -->
+                    <a href="https://www.figma.com/" class="custom-link" target="_blank" rel="noreferrer noopener" aria-label="Figma (opens in a new tab)">Figma</a>
+                    <!--  -->
+                    and handmade with caffeine and care in
+                     <!--  -->
+                    <a href="https://code.visualstudio.com/" class="custom-link" target="_blank" rel="noreferrer noopener" aria-label="Visual studio code (opens in a new tab)">Visual Studio Code</a>
+                    <!--  -->
+                    by the one and only (me). Deployed with               
+                    <!--  -->
+                    <a href="https://pages.github.com/" class="custom-link" target="_blank" rel="noreferrer noopener" aria-label="Github pages (opens in a new tab)">Github Pages</a>
+                </p>
+            </footer>
         </main>
     </div>
     <div class="display-button-wrapper">
