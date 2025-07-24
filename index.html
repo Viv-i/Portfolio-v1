@@ -30,6 +30,8 @@
             --lh-sm: 1.25rem;
             --fs-base: 1rem;
             --lh-base: 1.5rem;
+            --fs-2xl: 1.5rem;
+            --lh-2xl: 2rem;
         }
 
         /* CSS Reset */
@@ -108,9 +110,6 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: end;
-            text-align: right;
-            white-space: pre-line;
             scrollbar-width: none;       /* Firefox */
             -ms-overflow-style: none;    /* IE/Edge */
         }
@@ -120,8 +119,12 @@
         }
 
         /* Section */
-        section {
+        #about {
             width: 70%;
+        }
+
+        section {
+            width: 100%;
         }
 
         @media (min-width: 768px) {
@@ -141,7 +144,7 @@
             top: 0;
             z-index: 20;
             margin-bottom: 1rem;
-            padding: 1.25rem;
+            padding: 1.25rem 0 ;
             backdrop-filter: blur(12px);
             background-color: rgba(0, 0, 0, 0.75);
         }
@@ -154,8 +157,27 @@
             color: var(--dark-font-color);
         }
 
+        /* About */
+        #about {
+            align-self: end;
+            text-align: right;
+            margin-bottom: 4rem;
+        }
 
         /* Experience */
+        .experience {
+            margin-bottom: 3rem;
+        }
+        .duration {
+            opacity: 0.75;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: var(--fs-xs);
+            line-height: var(--lh-xs);
+            margin-top: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
         .link-with-icon {
             display: inline-flex;
             align-items: baseline;
@@ -166,6 +188,15 @@
         .job-title {
             display: inline;
             white-space: normal;
+            line-height: var(--lh-base);
+            font-size: var(--fs-base);
+            font-weight: 500;         
+        }
+
+        .job-description {
+            margin-top: 0.5rem;
+            line-height: var(--lh-sm);
+            font-size: var(--fs-sm);
         }
 
         .hover-icon {
@@ -213,7 +244,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.375rem;
-            justify-content: end;
+            margin-top: 0.5rem;
         }
         
         .pill {
@@ -252,9 +283,9 @@
         <main>
             <section id="about">
                 <p>
-                    Back in 2017, frustrated by the high cost of development in mechanical engineering, I decided to try my hand at game development using Unreal engine and Unity. Fast-forward to today, I've shifted my niche into building web based solutions.
-
-                    When I'm not at the computer, I'm usually woodworking, modelling, gardening, or going out with my dogs.
+                Back in 2017, frustrated by the high cost of development in mechanical engineering, I decided to try my hand at game development using Unreal engine and Unity.<br><br>
+                Fast-forward to today, I've shifted my niche into building web based solutions.<br><br>
+                When I'm not at the computer, I'm usually woodworking, modelling, gardening, or going out with my dogs.
                 </p>
             </section>
 
@@ -283,8 +314,8 @@
                             <li class="pill">PayPal API</li>
                             <li class="pill">PHP</li>
                             <li class="pill">MySQL</li>
-                            <li class="pill">JavaScript</li>
                             <li class="pill">CSS</li>
+                            <li class="pill">JavaScript</li>
                             <li class="pill">cPanel</li>
                         </ul>
                     </li>
@@ -309,9 +340,8 @@
                             <li class="pill">PHP</li>
                             <li class="pill">MySQL</li>
                             <li class="pill">ASP.NET</li>
+                            <li class="pill">CSS</li>
                             <li class="pill">JavaScript</li>
-                            <li class="pill">CSS</li>
-                            <li class="pill">CSS</li>
                             <li class="pill">cPanel</li>
                         </ul>
                     </li>
@@ -347,7 +377,7 @@
                 <div class="section-header">
                     <h2>Projects</h2>
                 </div>
-                
+
                 <div class="project">
                     <h2>Palawander</h2>
                     <p class="project-description">An online vehicle rental platform built for tourists visiting Palawan, offering real-time availability and booking of cars and motorcycles. </p>
